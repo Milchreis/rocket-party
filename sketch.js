@@ -1,7 +1,7 @@
 // Nick Müller
-// RocketParty
+// rocket-party
 
-let greeting = '2019';
+let greeting = decodeURI(window.location.search.substr(1)) || 'Your greetings';
 
 // scale factor for size and speed, if you change the canvas size
 let SCALE = 4;
