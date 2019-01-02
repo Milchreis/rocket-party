@@ -6,6 +6,8 @@ class Particle {
         this.acceleration = createVector(0, 0);
         this.gravity = createVector(0, 0.01);
         this.color = color;
+        this.alpha = 255;
+        this.fadeRate = 3;
         this.size = 1 * weight;
     }
 
@@ -16,8 +18,10 @@ class Particle {
         this.acceleration.mult(0);
 
         noStroke();
-        fill(this.color);
+        fill(red(this.color), green(this.color), blue(this.color), this.alpha);
         ellipse(this.position.x, this.position.y, this.size, this.size);
+
+        this.alpha -= this.fadeRate;
     }
 }
 
@@ -53,7 +57,7 @@ class Rocket {
 
         this.timeToExplode = random(500, 1000);
         this.timeToLive = millis() + (2000*scaleFactor);
-        this.color = color(random(0, 255), random(0, 255), random(0, 255), 120);
+        this.color = color(random(0, 255), random(0, 255), random(0, 255), 255);
         this.bornTime = millis();
     }
 
