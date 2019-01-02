@@ -1,7 +1,7 @@
 // Nick Müller
 // rocket-party
 
-let greeting = decodeURI(window.location.search.substr(1)) || 'Your greetings';
+let greeting = getGreeting('Your greetings');
 
 // scale factor for size and speed, if you change the canvas size
 let SCALE = 4;
@@ -40,5 +40,14 @@ function draw() {
 function checkRocketSpawn() {
     if(frameCount % 10 === 0) {
         rockets.push(new Rocket(random(0, width, 3), -0.9, SCALE));
+    }
+}
+
+function getGreeting(alternativeGreeting) {
+    if(window.location.search) {
+        return decodeURI(window.location.search.substr(1))
+            .replace(new RegExp('_', 'g'), ' ');
+    } else {
+        return alternativeGreeting;
     }
 }

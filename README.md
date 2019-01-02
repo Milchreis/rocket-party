@@ -5,7 +5,7 @@ Rockets and greetings as coding challenge
 
 Use the GET parameter for text-input and send a greeting to your frinds like:
 
-https://milchreis.github.io/rocket-party/?Happy new year
+https://milchreis.github.io/rocket-party/?Happy_new_year!
 
 Feel free to use or change the code.
 Special thanks to P5js
